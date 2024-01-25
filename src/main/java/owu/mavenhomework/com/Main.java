@@ -11,6 +11,7 @@ import owu.mavenhomework.com.models.Car;
 import owu.mavenhomework.com.models.DriverLicense;
 import owu.mavenhomework.com.models.Owner;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -33,8 +34,8 @@ public class Main {
                 DriverLicense stefansDriverLicense = new DriverLicense();
                 stefansDriverLicense.setSeries("11sj49830aa");
 
-                DriverLicense kristinasDriverLicense = new DriverLicense();
-                kristinasDriverLicense.setSeries("12dne09dyrnt");
+                DriverLicense maxDriverLicense = new DriverLicense();
+                maxDriverLicense.setSeries("12dne09dyrnt");
 
                 Car car1 = new Car();
                 car1.setModel("Toyota Supra");
@@ -59,17 +60,17 @@ public class Main {
 
                 Owner stefan = new Owner();
                 stefan.setName("Stefan");
-                stefan.setCars(List.of(car1, car2));
+                stefan.setCars(Arrays.asList(car1, car2));
                 stefan.setDriverLicense(stefansDriverLicense);
 
                 Owner max = new Owner();
                 max.setName("Max");
-                max.setCars(List.of(car2));
-                max.setDriverLicense(kristinasDriverLicense);
+                max.setCars(Arrays.asList(car2));
+                max.setDriverLicense(maxDriverLicense);
 
                 Owner kokos = new Owner();
                 kokos.setName("Kokos");
-                kokos.setCars(List.of(car1, car2, car3));
+                kokos.setCars(Arrays.asList(car1, car2, car3));
 
                 session.persist(stefan);
                 session.persist(kokos);
